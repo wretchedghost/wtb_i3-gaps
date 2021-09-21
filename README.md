@@ -1,5 +1,5 @@
 # My work laptop i3 Config
-Work Laptop Dell ToughBook Arch Linux Machine
+i3-gaps dotfiles Dell Tough Book build on Arch GNU/Linux
 
 ## Install
 ---
