@@ -1,0 +1,57 @@
+#Quality of Life options
+OPTIONS=!autopickup,number_pad:0
+OPTIONS=hilite_pet, color, fullscreen, force_invmenu, hilite_pile, !implicit_uncursed, lit_corridor
+OPTIONS=catname:Mittens
+OPTIONS=runmode:walk
+OPTIONS=disclose:+i +a yv yg yc yo
+OPTIONS=fruit:"GIB ME NEIM"
+OPTIONS=menucolors
+MENUCOLOR="cursed"=red
+MENUCOLOR="unholy"=red
+MENUCOLOR="uncursed"=white
+MENUCOLOR="blessed"=green
+MENUCOLOR="holy"=green
+SYMBOLS=S_boulder:0
+
+#Unreliable Options: Would be cool to have, but they're borked.
+OPTIONS=windowtype:curses
+OPTIONS=mouse_support
+OPTIONS=clicklook
+OPTIONS=align_status:right
+OPTIONS=guicolor
+OPTIONS=windowborders:1
+OPTIONS=statuslines:3
+
+#Really unreliable options
+OPTIONS=statushilites
+# HP
+OPTIONS=hitpointbar
+OPTIONS=hilite_status:hitpoints/100%/grey&normal
+OPTIONS=hilite_status:hitpoints/<100%/green&normal
+OPTIONS=hilite_status:hitpoints/<66%/yellow&normal
+OPTIONS=hilite_status:hitpoints/<50%/orange&normal
+OPTIONS=hilite_status:hitpoints/<33%/red&bold
+OPTIONS=hilite_status:hitpoints/<15%/red&inverse
+## Pw
+OPTIONS=hilite_status:power/100%/grey&normal
+OPTIONS=hilite_status:power/<100%/green&normal
+OPTIONS=hilite_status:power/<66%/yellow&normal
+OPTIONS=hilite_status:power/<50%/orange&normal
+OPTIONS=hilite_status:power/<33%/red&bold
+## Carry
+OPTIONS=hilite_status:cap/burdened/yellow/stressed/orange/strained/red&bold/overtaxed/red&inverse/overloaded/red&inverse&blink
+## Hunger
+OPTIONS=hilite_status:hunger/satiated/yellow/hungry/orange/weak/red&bold/fainting/red&inverse/fainted/red&inverse&blink
+## Mental
+OPTIONS=hilite_status:condition/hallu/yellow
+OPTIONS=hilite_status:condition/conf/orange
+OPTIONS=hilite_status:condition/stun/red&bold
+## Health
+OPTIONS=hilite_status:condition/termill/red&inverse
+OPTIONS=hilite_status:condition/foodpois/red&inverse
+OPTIONS=hilite_status:condition/slime/red&inverse
+# Str, Con, Dex, Int, Wis, Cha
+OPTIONS=hilite_status:characteristics/up/green/down/red
+# gold
+OPTIONS=hilite_status: gold/up/yellow/down/brown
+

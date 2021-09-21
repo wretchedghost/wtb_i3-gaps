@@ -1,0 +1,3 @@
+In this how to I am going to show you how to setup U2F authentication via a standard Yubikey with a touch sensor. I have the blue yubikey and a pair of the more robust Yubikey 5.
+
+The way this works is by letting pam authenticate via the output of the yubikey. I prefer to have a dual setup letting me use the yubikey or typing in my password just in case i dont have the key handy. 

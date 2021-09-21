@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/wretchedghost/.cache/vim/swap'
+let g:netrw_dirhist_2='/home/wretchedghost/.config/polybar'
+let g:netrw_dirhist_1='/home/wretchedghost/from_manjaro_tmp'

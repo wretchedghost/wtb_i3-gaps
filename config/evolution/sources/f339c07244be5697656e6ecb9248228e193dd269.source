@@ -1,0 +1,31 @@
+[Data Source]
+DisplayName=wretchedghost@wretchedghost.com:8443
+Enabled=true
+Parent=
+
+[Authentication]
+Host=
+Method=none
+Port=0
+ProxyUid=system-proxy
+RememberPassword=true
+User=
+CredentialName=
+IsExternal=true
+
+[Collection]
+BackendName=webdav
+CalendarEnabled=true
+ContactsEnabled=true
+Identity=wretchedghost
+MailEnabled=true
+AllowSourcesRename=false
+CalendarUrl=
+ContactsUrl=
+
+[GNOME Online Accounts]
+AccountId=account_1627486908_0
+CalendarUrl=https://wretchedghost@wretchedghost.com:8443/remote.php/caldav/
+ContactsUrl=https://wretchedghost@wretchedghost.com:8443/remote.php/carddav/
+Name=
+Address=

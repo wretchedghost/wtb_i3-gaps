@@ -1,0 +1,356 @@
+# Set mod key (Mod1=<Alt>, Mod4=<Super>)
+set $mod mod4
+
+# Set defualt desktop layout (default is tiling) <stacking|tabbed>
+# workspace_layout tabbed 
+
+# Hide borders
+# I like the border around the window which shows me which windows I am focused on
+hide_edge_borders none 
+
+# Used if you want to toggle the border.
+#bindsym $mod+F5 border normal
+
+#font pango:monospace 12
+#font xft:URWGothic-Book 12 # New from Manjaro
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+font pango:DejaVu Sans Mono 14
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+######################
+# Start Applications #
+######################
+bindsym $mod+F2 exec palemoon 
+bindsym $mod+Shift+s exec /usr/bin/signal-desktop-beta 
+bindsym $mod+Shift+v exec /bin/bash ~/bin/visionclient/app/visionclientlauncher.sh
+bindsym $mod+p exec exec /usr/bin/spotify 
+
+# Open up Brave
+#bindsym $mod+f exec /usr/bin/firefox
+bindsym $mod+f exec /usr/bin/brave-browser-beta
+bindsym $mod+F3 exec pcmanfm 
+
+# Take a screenshot with scrot
+bindsym Print exec --no-startup-id i3-scrot 
+bindsym $mod+Print --release exec --no-startup-id i3-scrot -w 
+bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s 
+
+# start a terminal
+bindsym $mod+Return exec --no-startup-id urxvt 
+
+# start a terminal floating and centered
+bindsym $mod+Shift+Return exec --no-startup-id urxvt -name wretchedurxvt
+for_window [instance="wretchedurxvt"] floating enable move position center
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start rofi (a program launcher)
+bindsym $mod+d exec rofi -show drun
+
+# launch pavucontrol
+bindsym $mod+Ctrl+m exec pavucontrol -name Pavucontrol 
+
+# launch a terminal with htop running
+bindsym $mod+i exec urxvt -e htop 
+
+# Start winbox
+bindsym $mod+m exec --no-startup-id wine ~/Downloads/winbox64.exe -name Winbox
+for_window [instance="Winbox"] floating window
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+semicolon split h;exec notify-send 'tile horizontally'
+
+# split in vertical orientation
+bindsym $mod+v split v;exec notify-send 'tile vertically'
+
+# split toggle
+bindsym $mod+q split toggle
+
+# enter fullscreen mode for the focused container
+bindsym $mod+n fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+#bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad 
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1:"
+#set $ws1 "1"
+set $ws2 "2:"
+#set $ws2 "2"
+set $ws3 "3:"
+#set $ws3 "3"
+set $ws4 "4:"
+#set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8:"
+#set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10:"
+#set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# #---Workspace Bindings---# #
+bindsym $mod+apostrophe split horizontal ;; exec $term
+bindsym $mod+slash split vertical ;; exec $term
+bindsym $mod+backslash workspace back_and_forth
+
+# Open applications on specific workspaces 
+assign [class="Brave"] $ws1
+#assign [class="Thunar"] $ws2
+assign [class="Evolution"] $ws3
+assign [class="Pale Moon"] $ws1
+assign [class="Signal"] $ws4
+
+# switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
+
+# Caps Indicator 
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Num_Lock exec pkill -SIGRTMIN+11 i3blocks
+
+# sound settings
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
+bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle
+
+# Dynamic screen resizing
+bindsym $mod+Shift+u exec --no-startup-id ~/.config/i3/i3resize.sh left
+bindsym $mod+Shift+i exec --no-startup-id ~/.config/i3/i3resize.sh down
+bindsym $mod+Shift+o exec --no-startup-id ~/.config/i3/i3resize.sh up
+bindsym $mod+Shift+p exec --no-startup-id ~/.config/i3/i3resize.sh right
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r 				mode "resize"
+
+#bindsym $mod+Escape			workspace prev
+bindsym $mod+Shift+Escape	exec --no-startup-id prompt "Exit i3?" "i3-msg exit"
+
+#bindsym $mod+x exec /home/wretchedghost/.config/i3/lock.sh
+bindsym $mod+x exec $HOME/.config/i3/lock_and_blur.sh
+
+##################### Autostart applications #####################
+exec --no-startup-id /usr/bin/nm-applet
+exec --no-startup-id /usr/bin/pamac-tray 
+exec --no-startup-id clipit 
+#exec --no-startup-id start_conky_maia 
+exec --no-startup-id /usr/bin/evolution
+#exec --no-startup-id start_conky_green 
+#exec_always --no-startup-id ff-theme-util 
+#exec_always --no-startup-id fix_xcursor 
+exec --no-startup-id /usr/bin/numlockx
+exec --no-startup-id /usr/bin/compton -cb
+# runs notify-send in critcal mode and stays up for 10 seconds (10000 mili)
+exec xautolock -detectsleep -time 10 -locker "$HOME/.config/i3/lock_and_blur.sh" \
+	-notify 30 \
+	-notifier "notify-send -u critical -t 10000 -- 'locking screen in 30 seconds'"
+#exec --no-startup-id /usr/bin/xautolock -time 10 -locker "~/.config/i3/lock_and_blur.sh" 
+#exec xautolock -time 10 -locker "~/bin/lock_and_blur.sh" &
+
+# start dunst notification program
+exec --no-startup-id /usr/bin/dunst
+
+# randomize wallpaper and lock screen
+exec --no-startup-id /usr/bin/feh --bg-fill -z ~/Pictures/Portugal/
+
+#exec --no-startup-id /bin/bash ~/bin/visionclient/app/visionclientlauncher.sh
+
+# sound-section
+exec --no-startup-id /usr/bin/volumeicon 
+
+# run redshift
+exec --no-startup-id /usr/bin/redshift
+
+# Brightness Control
+
+bindsym $mod+Shift+Ctrl+Up exec /usr/bin/xbacklight -inc 10%
+bindsym $mod+Shift+Ctrl+Down exec /usr/bin/xbacklight -dec 10%
+
+# Not needed on my laptop as the function key do not undim the backlight
+#bindsym XF86MonBrightnessUp exec /usr/bin/xbacklight -dec 10%
+#bindsym XF86MonBrightnessDown exec /usr/bin/xbacklight -dec 10%
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+	position top
+	output eDP-1
+		#i3bar_command ~/.config/polybar/launch.sh
+        #i3bar_command i3bar
+        status_command i3blocks -c ~/.config/i3blocks/i3blocks
+        tray_output eDP-1
+        #workspace_buttons yes
+		## Colors for i3status only
+		colors {
+			background #000000
+			#statusline #F9FAF9
+			#separator #454947
+
+			# border	backgr.		text
+			#focused_workspace	#F9FAF9 #16a085 #292F34
+			#active_workspace	#595B5B #353836 #FDF6E3
+			#inactive_workspace	#595B5B #222D31 #EEE8D5
+			#binding_mode	#16a085 #2C2C2C #F9FAF9
+			#urgent_workspace	#16a085 #FDF6E3 #E5201D
+	}
+}
+
+# #--Basic Definitions--# #
+#
+# Theme Colors
+set $bg-color				#212121
+set $inactive-bg-color		#212121
+set $text-color				#ffffff
+set $inactive-text-color	#212121
+set $urgent-bg-color		#e64a19
+#
+# Set Window Colors
+# Class						border			background		text		indicator
+# Nice gentoo (light purple) color
+#client.focused				#b294bb			#b294bb 		#ffffff 	#b294bb 
+# Nice yellow color
+#client.focused				#dee04c			#dee04c 		#ffffff     #dee04c 
+# Nice blue color
+client.focused				#57a7d9			#57a7d9 		#ffffff     #57a7d9
+#client.unfocused			#85678F 		#85678F 		#85678F		#85678F
+#client.unfocused			$inactive-bg-color 		$inactive-bg-color	$inactive-text-color		$bg-color	
+#client.focused_inactive	#85678F 		$85678F 		#1A1A1A 	#1A1A1A
+#client.urgent				#3B89B5 		#3B89B5 		#a5a5a5 	#85678F
+#client.background			#1A1A1A
+#
+# Needed for i3-gaps
+#for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 3
+
+#############################
+### settings for i3-gaps: ###
+#############################
+
+#gaps inner 15
+gaps inner 10
+#gaps outer 30
+gaps outer 10
+
+# #--Dropdown Windows---# #
+# General dropdown window traits. The order can matter.
+# Open specific applications in floating mode
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Galculator"] floating enable border pixel 1
+for_window [title="File Transfer*"] floating enable
+for_window [class="Lxappearance"] floating enable stick enable border normal
+for_window [class="Manjaro-hello"] floating enable
+for_window [class="Manjaro Settings Manager"] floating enable border normal
+
+for_window [class="(?i)gsimplecal"] floating enable
+
+# smart_gaps will full screen when only one window is open which I do not like.
+#smart_gaps on
+#smart_borders on

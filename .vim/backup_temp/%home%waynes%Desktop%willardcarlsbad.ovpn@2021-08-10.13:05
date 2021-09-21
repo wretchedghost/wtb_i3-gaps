@@ -1,0 +1,68 @@
+dev tun
+tls-client
+
+remote YOUR_SERVER_IP 1194
+
+# The "float" tells OpenVPN to accept authenticated packets from any address,
+# not only the address which was specified in the --remote option.
+# This is useful when you are connecting to a peer which holds a dynamic address
+# such as a dial-in user or DHCP client.
+# (Please refer to the manual of OpenVPN for more information.)
+
+#float
+
+# If redirect-gateway is enabled, the client will redirect it's
+# default network gateway through the VPN.
+# It means the VPN connection will firstly connect to the VPN Server
+# and then to the internet.
+# (Please refer to the manual of OpenVPN for more information.)
+
+#redirect-gateway def1
+
+# dhcp-option DNS: To set primary domain name server address.
+# Repeat this option to set secondary DNS server addresses.
+
+#dhcp-option DNS DNS_IP_ADDRESS
+
+pull
+
+# If you want to connect by Server's IPv6 address, you should use
+# "proto udp6" in UDP mode or "proto tcp6-client" in TCP mode
+proto udp
+
+script-security 2
+
+
+comp-lzo
+
+reneg-sec 0
+
+cipher AES-256-CBC
+
+auth SHA512
+
+auth-user-pass
+<ca>
+-----BEGIN CERTIFICATE-----
+MIIDdTCCAl2gAwIBAgIJANpgRLs3Plo/MA0GCSqGSIb3DQEBCwUAMFExCzAJBgNV
+BAYTAlRXMQ8wDQYDVQQHDAZUYWlwZWkxFjAUBgNVBAoMDVN5bm9sb2d5IEluYy4x
+GTAXBgNVBAMMEFN5bm9sb2d5IEluYy4gQ0EwHhcNMjAwNjIzMTkwMDQ5WhcNMjEw
+NjI0MTkwMDQ5WjBRMQswCQYDVQQGEwJUVzEPMA0GA1UEBwwGVGFpcGVpMRYwFAYD
+VQQKDA1TeW5vbG9neSBJbmMuMRkwFwYDVQQDDBBTeW5vbG9neSBJbmMuIENBMIIB
+IjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvL3V3JTWyGdGk9kjtGjamuMn
+LJ1hFBMN4cdT2BoZ34D7EYQV1t6czX31LHJxz83zdq0JnoI9Ft7DAS5yc0nha5z7
+0XA4qwIAwef0SOYpLec03lJA5Rv22HcPHSWNpDfGorLUWiqNSwg9NWo5gHwFmacX
+rrSLwMAEyoeYd7F3aVVydkcY3re5d2xQa+53m/S8HqAd03mwztY78di82pWz0G4d
+XBmB9X2MrB9dgU1Ni8bNXr1OG3qwBlr5DTZ3MBENxFVhs8uj7/YmQK7tNbAMgkd3
+oKUkbj483b75kg9NWwhGvvrQut6++LVS2LdMrT7ubIXBZS3tWaX8wIbEnR9oNwID
+AQABo1AwTjAdBgNVHQ4EFgQUc6cU4cPg7Xpl9hZ2DJX99oHd8J8wHwYDVR0jBBgw
+FoAUc6cU4cPg7Xpl9hZ2DJX99oHd8J8wDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0B
+AQsFAAOCAQEAdLgZjfQSkG+RssUDHnXq4xAsa4Ud/iXRJsKCJQcOb7k90wCirsM+
+P2TqGMRxNwRShgb7CNJzUWvPhFUWy2/drnKRt8jZb5kdzDtEeFo+noFv9XyPckmt
+noIB0IC3ht4ESKUHmd5CmkU05UaiV5OnXENQGZXFOS3bJaYudaK96JzHO+s/3aCy
+p/vB2Q8pD36rqmWGEnkTqqtS/l/b4APbEE8LpLtKcHXtTEzcMewYmiyyt9JCMGJN
+6Psnugc7LBbJhLs8DYfYAaWTU36iOowa/viZP351eYO/2MnVHMJk+ZC/UrdNXsUC
+uRhq85A8peGaFG+6BogaU2J2cjyVNLSaTQ==
+-----END CERTIFICATE-----
+
+</ca>

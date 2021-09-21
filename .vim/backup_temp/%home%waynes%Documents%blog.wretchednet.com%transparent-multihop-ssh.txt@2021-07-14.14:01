@@ -1,0 +1,3 @@
+I have found it necessary to hop between one device to get to another device while using SSH. Usually this is done when I am not able to get to my vpn or when I am needing to get to my device quickly but I dont want to disconnect from the work I am doing and I cant have a vpn drop certain things. My work load is sometimes speratic and often I have a few minutes to log into my network to check on a config or backups and what not. 
+
+To do the transparent mulithop via SSH is quite simple. 
