@@ -30,7 +30,7 @@ URxvt*transparent: false
 URxvt*scrollBar: false
 URxvt*geometry: 92x24+550-95
 
-*.font: xft:Monoid:style=Regular:size=20
+!*.font: xft:Monoid:style=Regular:size=20
 
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: False
