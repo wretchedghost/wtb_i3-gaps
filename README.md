@@ -1,1 +1,1 @@
-![Desktop](wtb_i3-gaps_bigger_less.png)
+![Desktop](wtb_i3-gaps_bigger_plus.png)
