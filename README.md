@@ -39,4 +39,4 @@ Install the following applicaitons to you system:
 * pidgin
 * evolution
 
-![Desktop](wtb_i3-gaps_bigger_plus.png)
+![Desktop](screenshots/wtb_i3-gaps_bigger_plus.png)
