@@ -55,6 +55,7 @@ prompt {
 }
 
 // Not used
+//
 textbox-prompt-colon {
     expand: false;
     str: ":";
