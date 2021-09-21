@@ -39,4 +39,9 @@ Install the following applicaitons to you system:
 * pidgin
 * evolution
 
+### Screenfetch
 ![Desktop](screenshots/wtb_i3-gaps_bigger_plus.png)
+
+### Rofi
+![Rofi](screenshots/wtb_i3-gaps_rofi.png)
+
