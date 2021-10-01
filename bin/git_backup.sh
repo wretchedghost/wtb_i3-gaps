@@ -1,10 +1,22 @@
+origin="$HOME/wtb_i3-gaps"
+
 ## one level deep
-rsync -av $HOME/.fehbg $HOME/.newsboat $HOME/.Xresources* $HOME/.xinitrc* $HOME/.tmux* $HOME/.vim* $HOME/.bashrc* $HOME/git_i3-wtb/
+rsync -av $HOME/.fehbg $HOME/.newsboat $HOME/.Xresources* $HOME/.xinitrc* $HOME/.tmux* $HOME/.vim* $HOME/.bashrc* $HOME/wtb_i3-gaps/
 
 lvl2="/home/waynes/.config"
 ## two levels deep
-rsync -av $lvl2/i3 $lvl2/i3blocks $lvl2/redshift.conf $lvl2/rofi $HOME/git_i3-wtb/.config
+rsync -av $lvl2/i3 $lvl2/i3blocks $lvl2/redshift.conf $lvl2/rofi $HOME/wtb_i3-gaps/.config
 
-rsync -av $HOME/bin/*.sh $HOME/git_i3-wtb/bin/
+rsync -av $HOME/bin/*.sh $HOME/wtb_i3-gaps/bin/
 
-rm -rf $HOME/git_i3-wtb/.vim/backup/*
+rm -rf $HOME/wtb_i3-gaps/.vim/backup/*
+
+mv $origin/.config $origin/config
+mv $origin/.bashrc $origin/bashrc
+mv $origin/.fehbg $origin/fehbg
+mv $origin/.newsboat $origin/newsboat
+mv $origin/.urxvt $origin/urxvt
+mv $origin/.vimrc $origin/vimrc
+mv $origin/.xinitrc $origin/xinitrc
+mv $origin/.Xresources $origin/Xresources
+mv $origin/.tmux.conf $origin/tmux.conf
