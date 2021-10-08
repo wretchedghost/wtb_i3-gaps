@@ -1,48 +1,28 @@
-# My work laptop i3 Config
-i3-gaps dotfiles Dell Tough Book build on Arch GNU/Linux
+## goyo.vim - Distraction-free writing tool that sets the writing dimensions suitable for non-technical and non-programming contexts.
 
-## Install
----
-Install the following applicaitons to you system:
+* Turn on - :Goyo
+* Turn off - :Goyo!
 
-* xorg-xbacklight
-* i3-gaps
-* i3-blocks
-* scrot
-* htop
-* ttf-font-awesome
-* redlight
-* rofi
-* compton/which is called picom now
-* nm-applet
-* volumeicon
-* clipit
-* openvpn
-* i3lock
-* imagemagik
-* i3-wallpapers
-* i3-scrot
-* i3-default-artwork
-* feh
-* pavucontrol
+## limelight.vim - Allows you to focus and highlight blocks of text and content dynamically, usually for writing oriented environments.
 
-### AUR Using Yay
+* Turn on - :Limelight
+* Turn off - :Limelight (same)
 
-* colorpicker
-* spotify
-* signal-desktop-beta
-* steam-manjaro
+## NERD Tree - Allows you to explore your filesystem in order to easily open files and directories. It take the form of a tree which you manipulate with the keyboard and/or mouse.
 
-### Extra Install
+* Start - :NERDTree
 
-* newsboat
-* profanity
-* pidgin
-* evolution
+## SuperTab - SuperTab is an auto-completion plugin that allows extra insert mode completion using the key. After typing a few letters of a word that exists withina current open buffer (vim session) SuperTab will list the auto-completion options. 
 
-### Screenfetch
-![Desktop](screenshots/wtb_i3-gaps_bigger_plus.png)
+## vim-airline - Lean and mean status/tabline for vim that's light as air. Basically its a nice status bar that shows various things such as: 
+1. Which mode you are in
+2. file name
+3. type of file
+4. word count
+5. number of lines and which line you are currently on. 
 
-### Rofi
-![Rofi](screenshots/wtb_i3-gaps_rofi.png)
+## vim-markdown - Automatically sets up certain parameters for markdown content when a .md file is created or edited. 
 
+## vim-sensible - Vim settings that we can all agree on. 
+
+## vim-vividchalk - A particular theme I fancy. 

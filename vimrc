@@ -18,8 +18,8 @@ endif
 
 "Better buffer management - hide buggers instead of closing them 
 set hidden
-set history=1000
-set undolevels=1000
+set history=5000
+set undolevels=5000
 
 " tab -> spaces
 set expandtab
@@ -68,6 +68,12 @@ au BufWritePre * let &bex = '@' . strftime("%F.%H:%M")
 set noswapfile
 set directory=.,./.backup,/tmp
 
+" Persist undo history between Vim sessions.
+if has('persistent_undo')
+	set undodir=$HOME/.vim/undo
+	if !isdirectory(&undodir) | call mkdir(&undodir, 'p', 0700) | endif
+endif
+
 execute pathogen#infect()
 
 syntax on	" Enable syntax highlighting
@@ -85,6 +91,7 @@ set nohlsearch	" dont highlight search results
 "colorscheme vividchalk
 colorscheme vividchalk
 
+" Only for gui
 set background=dark
 
 set scrolloff=2
@@ -103,6 +110,14 @@ set laststatus=2
 " Return to last edit position when opening files
 autocmd BufReadPost * if line("'\'") > 0 && line("'\'") <=line("$") | exe "normal! g'\"" | endif
 
+"""""""""""""" Limelight """"""""""""""""""""""""""""""""
+
+" Color name (:help cterm-colors
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+
+"""""""""""""" Limelight End """"""""""""""""""""""""""""""""
+
 """""""""""""" MARKDOWN """"""""""""""""""""""""""""""""
 
 " Treat all .md files as markdown
@@ -114,7 +129,18 @@ autocmd FileType markdown set cursorline
 " Hide and format markdown elements like **bold**
 "autocmd FileType markdown set conceallevel=2
 
+"let vim_markdown_preview_browser='Google Chrome'
+let vim_markdown_preview_browser='Brave'
+
 """"""""""""" END MARKDOWN """""""""""""""""""""""""""
+
+"""""""""""" txt """""""""""""""""""""""""""""""""""""
+
+" Treat all .txt files
+"autocmd BufNewFile,BufRead *.txt setlocal nowrap 
+autocmd BufNewFile,BufRead *.txt set nonumber
+
+""""""""""" End txt """""""""""""""""""""""""""""""""
 
 " Allow editing a file as superuser when not first run as superuser
 cmap w!! %!sudo tee > /dev/null %
