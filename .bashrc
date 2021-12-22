@@ -139,12 +139,6 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-alias prox0="ssh wretchedghost@192.168.20.20"
-alias truenas0="ssh wretchedghost@192.168.20.23"
-alias media0="ssh wretchedghost@192.168.20.25"
-alias wrk0="ssh wretchedghost@192.168.30.25"
-alias sql0="ssh waynes@10.0.0.210"
-
 # Changes dir color (30:black, 31:red, 32:green, 33:yellow, 34:blue, 35:purple, 36:cyan, 37:white)
 # Use di=1;4;33 to make it (1) bold, (4) underlined, and (33) yellow
 LS_COLORS="di=1;33"
